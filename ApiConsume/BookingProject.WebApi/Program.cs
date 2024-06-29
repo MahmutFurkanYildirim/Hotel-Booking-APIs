@@ -3,6 +3,7 @@ using BookingProject.BusinessLayer.Concrete;
 using BookingProject.DataAccessLayer.Abstract;
 using BookingProject.DataAccessLayer.Concrete;
 using BookingProject.DataAccessLayer.EntityFramework;
+using BookingProject.WebApi.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,8 @@ builder.Services.AddScoped<ISubscribeDal, EfSubscribeDal>();
 builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 builder.Services.AddScoped<ITestimonialDal, EfTestimonialsDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
+builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
+
 
 builder.Services.AddCors(opt =>
 {
