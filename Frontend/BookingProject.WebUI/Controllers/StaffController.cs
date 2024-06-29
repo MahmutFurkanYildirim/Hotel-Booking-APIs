@@ -1,6 +1,7 @@
 ﻿using BookingProject.WebUI.Models.Staff;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace BookingProject.WebUI.Controllers
 {
@@ -22,6 +23,24 @@ namespace BookingProject.WebUI.Controllers
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<StaffViewModel>>(jsonData);
                 return View(values);
+            }
+            return View();
+        }
+        [HttpGet]
+        public IActionResult AddStaff()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddStaff(AddStaffModel model)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var jsonData = JsonConvert.SerializeObject(model);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsync("http://localhost:5250/api/Staff", stringContent);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
             }
             return View();
         }
