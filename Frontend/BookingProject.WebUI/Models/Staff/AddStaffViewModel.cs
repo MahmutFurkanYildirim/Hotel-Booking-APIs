@@ -1,6 +1,6 @@
 ﻿namespace BookingProject.WebUI.Models.Staff
 {
-    public class AddStaffModel
+    public class AddStaffViewModel
     {
         public string? Name { get; set; }
         public string? Title { get; set; }
