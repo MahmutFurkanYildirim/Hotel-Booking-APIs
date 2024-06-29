@@ -71,10 +71,10 @@ namespace BookingProject.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateTestimonial(UpdateTestimonialViewModel updateStaff)
+        public async Task<IActionResult> UpdateTestimonial(UpdateTestimonialViewModel updateTestimonial)
         {
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(updateStaff);
+            var jsonData = JsonConvert.SerializeObject(updateTestimonial);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             var responseMessage = await client.PutAsync("http://localhost:5250/api/Testimonial/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
