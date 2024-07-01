@@ -33,7 +33,7 @@ namespace BookingProject.WebUI.Controllers
                 Name = createNewUserDto.Name,
                 Surname = createNewUserDto.Surname,
                 UserName = createNewUserDto.Username,
-                Email = createNewUserDto.EMail
+                Email = createNewUserDto.Email
             };
 
             var result = await _userManager.CreateAsync(appUser, createNewUserDto.Password);

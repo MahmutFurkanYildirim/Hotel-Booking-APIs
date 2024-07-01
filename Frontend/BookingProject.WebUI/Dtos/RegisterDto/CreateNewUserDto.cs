@@ -13,8 +13,8 @@ namespace BookingProject.WebUI.Dtos.RegisterDto
         [Required(ErrorMessage = "Username field is required")]
         public string Username { get; set; }
 
-        [Required(ErrorMessage = "EMail field is required")]
-        public string EMail { get; set; }
+        [Required(ErrorMessage = "Email field is required")]
+        public string Email { get; set; }
 
         [Required(ErrorMessage = "Password field is required")]
         public string Password { get; set; }

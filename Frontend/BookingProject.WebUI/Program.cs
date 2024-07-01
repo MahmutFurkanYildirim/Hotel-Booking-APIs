@@ -1,4 +1,6 @@
 using BookingProject.WebUI.Mapping;
+using BookingProject.DataAccessLayer.Concrete;
+using BookingProject.EntityLayer.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient();
 builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
+builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<Context>();
 
 var app = builder.Build();
 
