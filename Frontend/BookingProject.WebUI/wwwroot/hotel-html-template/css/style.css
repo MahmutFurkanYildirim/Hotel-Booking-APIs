@@ -44,10 +44,18 @@
     transition: .5s;
 }
 
-    .btn.btn-primary,
-    .btn.btn-secondary {
-        color: #FFFFFF;
-    }
+.btn-primary {
+    background-color: palegreen; /* Butonun arka plan rengi */
+    border-color: aliceblue; /* Butonun kenar rengi */
+    color: black; /* Butonun metin rengi */
+}
+
+
+.btn.btn-secondary {
+    background-color: white; /* Butonun arka plan rengi */
+    border-color: palegreen; /* Butonun kenar rengi */
+    color: black; /* Butonun metin rengi */
+}
 
 .btn-square {
     width: 38px;
