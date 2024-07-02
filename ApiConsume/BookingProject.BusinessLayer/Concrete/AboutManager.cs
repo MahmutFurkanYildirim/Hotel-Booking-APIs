@@ -8,8 +8,9 @@ namespace BookingProject.BusinessLayer.Concrete
     {
         private readonly IAboutDal _aboutDal;
 
-        public AboutManager()
+        public AboutManager(IAboutDal aboutDal)
         {
+            _aboutDal = aboutDal;
         }
 
         public void TDelete(About t)
