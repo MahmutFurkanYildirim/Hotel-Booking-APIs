@@ -45,16 +45,16 @@
 }
 
 .btn-primary {
-    background-color: palegreen; /* Butonun arka plan rengi */
-    border-color: aliceblue; /* Butonun kenar rengi */
-    color: black; /* Butonun metin rengi */
+    background-color: palegreen;
+    border-color: aliceblue;
+    color: black;
 }
 
 
 .btn.btn-secondary {
-    background-color: white; /* Butonun arka plan rengi */
-    border-color: palegreen; /* Butonun kenar rengi */
-    color: black; /* Butonun metin rengi */
+    background-color: white;
+    border-color: palegreen;
+    color: black;
 }
 
 .btn-square {
