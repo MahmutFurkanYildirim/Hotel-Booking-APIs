@@ -50,6 +50,12 @@
     color: black;
 }
 
+.btn-third {
+    background-color: var(--dark);
+    border-color: aliceblue;
+    color: white;
+}
+
 
 .btn.btn-secondary {
     background-color: white;
@@ -104,6 +110,10 @@
     color: var(--primary) !important; /* Ana renk */
 }
 
+.text-backDark {
+    color: var(--dark) !important; /* Ana renk */
+}
+
 .fa-envelope, .fa-phone-alt {
     color: var(--primary); /* Ýkon rengi */
 }
@@ -118,6 +128,10 @@
 
 .bg-white {
     background-color: var(--light) !important; /* Beyaz arka plan rengi */
+}
+
+.bg-acid {
+    background-color: palegreen; /* Beyaz arka plan rengi */
 }
 
 
