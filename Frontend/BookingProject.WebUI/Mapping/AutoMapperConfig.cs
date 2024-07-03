@@ -5,6 +5,7 @@ using BookingProject.WebUI.Dtos.LoginDto;
 using BookingProject.WebUI.Dtos.RegisterDto;
 using BookingProject.WebUI.Dtos.ServiceDto;
 using BookingProject.WebUI.Dtos.StaffDto;
+using BookingProject.WebUI.Dtos.SubscribeDto;
 
 namespace BookingProject.WebUI.Mapping
 {
@@ -23,6 +24,8 @@ namespace BookingProject.WebUI.Mapping
             CreateMap<UpdateAboutDto, About>().ReverseMap();
 
             CreateMap<ResultStaffDto, Staff>().ReverseMap();
+
+            CreateMap<CreateSubscribeDto, Subscribe>().ReverseMap();
 
         }
     }

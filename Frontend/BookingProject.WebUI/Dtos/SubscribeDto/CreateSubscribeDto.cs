@@ -1,6 +1,6 @@
-﻿namespace BookingProject.EntityLayer.Concrete
+﻿namespace BookingProject.WebUI.Dtos.SubscribeDto
 {
-    public class Subscribe
+    public class CreateSubscribeDto
     {
         public int SubscribeId { get; set; }
         public string? Mail { get; set; }
