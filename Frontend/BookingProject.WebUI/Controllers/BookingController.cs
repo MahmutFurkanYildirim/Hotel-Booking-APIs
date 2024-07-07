@@ -28,22 +28,35 @@ namespace BookingProject.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddBooking(CreateBookingDto createBookingDto)
         {
+
+            if (!ModelState.IsValid)
+            {
+                // Model state hatalarını kullanıcıya gösterin
+                return View(createBookingDto);
+            }
+
             createBookingDto.Status = "Waiting for approval";
-            createBookingDto.Description = string.Empty;
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createBookingDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("http://localhost:5250/api/Booking", stringContent);
+            var response = await client.PostAsync("http://localhost:5250/api/Bookin", stringContent);
+
             if (response.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
             }
             else
             {
+                var statusCode = response.StatusCode;
+                var reasonPhrase = response.ReasonPhrase;
                 var error = await response.Content.ReadAsStringAsync();
-                ModelState.AddModelError(string.Empty, $"API call failed: {error}");
+
+                Console.WriteLine($"API call failed. Status Code: {statusCode}, Reason: {reasonPhrase}, Error: {error}");
+
+                ModelState.AddModelError(string.Empty, $"API call failed: Status Code: {statusCode}, Reason: {reasonPhrase}");
                 return View(createBookingDto);
             }
         }
+
     }
 }
