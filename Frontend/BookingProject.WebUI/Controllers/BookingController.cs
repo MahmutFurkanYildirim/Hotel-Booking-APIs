@@ -31,7 +31,6 @@ namespace BookingProject.WebUI.Controllers
 
             if (!ModelState.IsValid)
             {
-                // Model state hatalarını kullanıcıya gösterin
                 return View(createBookingDto);
             }
 
@@ -39,7 +38,7 @@ namespace BookingProject.WebUI.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createBookingDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("http://localhost:5250/api/Bookin", stringContent);
+            var response = await client.PostAsync("http://localhost:5250/api/Booking", stringContent);
 
             if (response.IsSuccessStatusCode)
             {

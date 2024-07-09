@@ -1,17 +1,16 @@
 ﻿using BookingProject.BusinessLayer.Abstract;
 using BookingProject.EntityLayer.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookingProject.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BookinController : ControllerBase
+    public class BookingController : ControllerBase
     {
         private readonly IBookingService _bookingService;
 
-        public BookinController(IBookingService bookingService)
+        public BookingController(IBookingService bookingService)
         {
             _bookingService = bookingService;
         }
@@ -51,5 +50,6 @@ namespace BookingProject.WebApi.Controllers
             var ServiceValue = _bookingService.TGetById(id);
             return Ok(ServiceValue);
         }
+
     }
 }

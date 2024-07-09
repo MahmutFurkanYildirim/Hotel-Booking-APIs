@@ -29,6 +29,7 @@ namespace BookingProject.WebUI.Mapping
             CreateMap<CreateSubscribeDto, Subscribe>().ReverseMap();
 
             CreateMap<CreateBookingDto, Booking>().ReverseMap();
+            CreateMap<UpdateBookingDto, Booking>().ReverseMap();
 
         }
     }

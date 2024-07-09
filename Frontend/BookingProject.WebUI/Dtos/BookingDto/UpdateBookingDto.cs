@@ -1,6 +1,6 @@
 ﻿namespace BookingProject.WebUI.Dtos.BookingDto
 {
-    public class ResultBookingDto
+    public class UpdateBookingDto
     {
         public int BookingID { get; set; }
         public string Name { get; set; }
@@ -15,4 +15,3 @@
         public string? Status { get; set; }
     }
 }
-
